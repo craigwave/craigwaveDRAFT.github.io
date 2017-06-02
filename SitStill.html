@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>sit still/face the front.</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ideal-image-slider.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="js/bootstrap.js"></script>
+	<script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ideal-image-slider.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="title">
+        <div class="craigwave" onclick="location.href='Index.html';">
+            <p1>craig.</p1>
+        </div>
+
+		<div class="menu-toggle">
+	        <p1>menu</p1>
+        </div>
+
+		<ul class="menu">
+			<p2>vr</p2><br>
+			<li class="menu-item" onclick="location.href='SitStill.html';" style="cursor: pointer;">sit still/face the front</li><br>
+			<br>
+			<p2>video</p2><br>
+            <li class="menu-item" onclick="location.href='Canberra.html';" style="cursor: pointer;">canberra</li><br>
+            <li class="menu-item" onclick="location.href='PWP.html';" style="cursor: pointer;">painting with pixels</li><br>
+            <li class="menu-item" onclick="location.href='SNS.html';" style="cursor: pointer;">sportswear and scribbles</li><br>
+            <br>
+            <p2>photo</p2><br>
+            <li class="menu-item" onclick="location.href='Film.html';" style="cursor: pointer;">filmjunk</li><br>
+            <li class="menu-item" onclick="location.href='Motion.html';" style="cursor: pointer;">motion</li><br>
+
+            <br>
+            <p2>3d</p2><br>
+            <li class="menu-item" onclick="location.href='Photogrammetry.html';" style="cursor: pointer;">photogrammetry</li><br>
+            <li class="menu-item" onclick="location.href='Models.html';" style="cursor: pointer;">models</li><br>
+
+            <br>
+            
+            <li class="menu-item" onclick="location.href='About.html';" style="cursor: pointer;">about</li><br>
+		</ul>
+   	
+    	<div id="slider-holder">
+			<div id="slider">
+				<img src="img/pwp/pwp1.jpg" alt="">
+				<img data-src="img/pwp/pwp2.jpg"alt="">
+			</div>
+      	</div>
+       	
+       
+        <div class="content-wrapper">    
+			<div class="content-text">
+				<h2>Sit Still/Face The Front</h2>
+				<h3>2016</h3>
+				<p3>
+				<i>MEMEMMEMEMEME<br>
+				<br>
+				Featuring interviews with Hyper Reelist, VJ Morph, VJ Spook and Cindi Drennan<br>
+				<br>
+				Written, directed and edited by Craig Stubbs-Race and Sabrina Calero<br>
+				<br>
+				Original score by Hugh Guest and Innerbloom remix by Roan Psyko</i></p3>
+				<p3>
+				While you’ve probably never heard of the term ‘VJ’, you’ve definitely experienced this under-appreciated art form of the live music scene. Painting With Pixels is an exploration into the art of VJing and it’s importance as a ‘visual interpretation of our aural experience’.,
+				Featuring interviews with Hyper Reelist, VJ Morph, VJ Spook and Cindi Drennan,
+				Written, directed and edited by Craig Stubbs-Race and Sabrina Calero,
+				Original score by Hugh Guest and Innerbloom remix by Roan Psyko</p3>
+			</div>
+    	</div>
+        
+        <!--
+	    <div class="360-content">
+            <a-scene>
+                
+                <a-entity camera reverse-look-controls></a-entity>
+
+                <a-assets>
+                    <video id="Video" autoplay="true" loop="true" src="vr/mountains_2_v3.mp4" />
+                </a-assets>
+                    
+                <a-videosphere id="video-360" src="#Video"></a-videosphere>
+        
+                
+                <a-camera rotation="0 180 0"></a-camera>           
+            </a-scene>
+        </div>
+        -->
+        
+	</div>
+	
+	
+
+    <script>
+    var slider = new IdealImageSlider.Slider({
+	selector: '#slider',
+	height: 'auto',// Required but can be set by CSS
+	});
+	
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,12 +1,147 @@
-<html>
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+
+	<title>Craig Stubbs-Race</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+	<script src="js/three.js"></script>
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/main.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    
+    
+
+
+</head>
 
 <body>
-    <div>
-        <ul>
-            <li>bricks</li>
-            <li>mortar</li>
-        </ul>
+
+    <div class="title">
+        
+        <div class="craigwave" onclick="location.href='Index.html';">
+            <p1>craig.</p1>
+        </div>
+        
+        <div class="menu-toggle">
+	        <p1>menu</p1>
+        </div>
+
+		<ul class="menu">
+			<p2>vr</p2><br>
+			<li class="menu-item" onclick="location.href='SitStill.html';" style="cursor: pointer;">sit still/face the front</li><br>
+			<br>
+			<p2>video</p2><br>
+            <li class="menu-item" onclick="location.href='Corporate.html';" style="cursor: pointer;">corporate</li><br>
+            <li class="menu-item" onclick="location.href='Creative.html';" style="cursor: pointer;">creative</li><br>
+            <li class="menu-item" onclick="location.href='Documentary.html';" style="cursor: pointer;">documentary</li><br>
+            <br>
+            <p2>photo</p2><br>
+            <li class="menu-item" onclick="location.href='Film.html';" style="cursor: pointer;">film</li><br>
+            <li class="menu-item" onclick="location.href='Motion.html';" style="cursor: pointer;">motion</li><br>
+
+            <br>
+            <p2>3d</p2><br>
+            <li class="menu-item" onclick="location.href='Photogrammetry.html';" style="cursor: pointer;">photogrammetry</li><br>
+            <li class="menu-item" onclick="location.href='Models.html';" style="cursor: pointer;">models</li><br>
+
+            <br>
+            
+            <li class="menu-item" onclick="location.href='About.html';" style="cursor: pointer;">about</li><br>
+		</ul>
+      
+      
+
+        
+        
     </div>
+
+    <canvas id="canvas"></div>
+    <script>
+        init();
+        animate();
+
+        var scene, camera, renderer;
+
+
+        function init() {
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth,window.innerHeight);
+            renderer.setClearColor(0xffffff, 1);
+
+            document.body.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            
+            var loader = new THREE.ObjectLoader();
+            loader.load('models/head_v1.json', function(object){
+                object.scale.set(1,1,1),
+                object.position.set(0,-2,0), 
+                object.rotation.set(0,0,0),
+                scene.add(object) 
+            });
+            
+            var light = new THREE.PointLight( 0xffffff, 2 );
+			light.position.set( 0, 3, 0 );
+			scene.add( light );
+            
+
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial({
+                color: 0x00ff00
+                
+            });
+
+            var cube = new THREE.Mesh(geometry, material);
+            //scene.add(cube);
+            camera.position.z = 5;
+
+            window.addEventListener( 'resize', onWindowResize, false );
+
+        }
+
+        function onWindowResize(){
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            update();
+            controls.update();
+            render();
+        }
+
+        function update() {
+
+        }
+
+        function render() {
+
+            renderer.render(scene, camera);
+        }
+
+    </script>
+
+
+
+
+
+
+
 </body>
 
 </html>
